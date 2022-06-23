@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#script to print PID of scritp running
+pgrep -n
