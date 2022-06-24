@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-#script prints some text in a loop
-function catchKill(){
-	echo "I am invincible!!!"
-}
-
-while true
+# Displays "Infinity to beyond" indefinitely
+# With a sleep 2 in between the iteration
+# Displays I am invincible!!! when receiving a SIGTERM signal
+trap 'echo "I am invincible!!!"' SIGTERM
+a=1
+while [ $a -ge 1 ]
 do
-	echo "To infinity and beyond"
-	sleep 2
-	trap catchKill SIGTERM	
+echo "To infinity and beyond"
+sleep 2
+((a++))
 done
